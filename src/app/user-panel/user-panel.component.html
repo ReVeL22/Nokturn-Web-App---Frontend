@@ -1,0 +1,154 @@
+<main>
+  <app-aside-menu-mobile></app-aside-menu-mobile>
+  <!-- <ul class="menu">
+    <li><a *ngIf="userLogged" [routerLink]="['/profile']">Mój Profil</a></li>
+    <li><a *ngIf="userLogged" [routerLink]="['/offers']">Ogłoszenia</a></li>
+    <li><a *ngIf="userLogged" [routerLink]="['/schedule']">Harmonogram</a></li>
+    <li><a *ngIf="userLogged" [routerLink]="['/myband']">Mój zespół</a></li>
+  </ul> -->
+  <section *ngIf='user && post && !edition' class="details">
+    <div class="edit">
+      <span>Edytuj Dane</span><i (click)='edit()' class="fas fa-user-edit"></i>
+    </div>
+    <div class="detail">
+      <div class="prop">Imię i Nazwisko</div>
+      <div class="cont">{{user.name + ' ' + user.lastName}}</div>
+    </div>
+    <div class="detail">
+      <div class="prop">E-mail</div>
+      <div class="cont">{{user.email}}</div>
+    </div>
+    <div class="detail">
+      <div class="prop">Hasło</div>
+      <div class="cont">{{passLength | password}}</div>
+    </div>
+    <div class="detail">
+      <div class="prop">Miasto</div>
+      <div class="cont">{{user.city}}</div>
+    </div>
+    <div class="detail">
+      <div class="prop">Instrument/y</div>
+      <div class="cont inst">
+        <ng-container *ngFor="let instrument of post.instruments; let i=index">
+          <div *ngIf="instrument" class="inst">{{instrumentsNames[i]}}</div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="detail">
+      <div class="prop">Poszukiwany rodzaj zespołu</div>
+      <div class="cont inst">
+        <ng-container *ngFor="let band of post.band; let i=index">
+          <div *ngIf="band" class="inst">{{bandsNames[i]}}</div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="detail">
+      <div class="prop">O sobie</div>
+      <div class="cont info">{{post.about}}</div>
+    </div>
+  </section>
+  <section *ngIf='user && post && edition' class="details">
+    <div class="edit">
+      <span>Edytuj Dane</span><i (click)='edit()' class="fas fa-user-edit yellow"></i>
+    </div>
+    <div class="detail">
+      <div class="prop">Imię i Nazwisko</div>
+      <div class="cont">{{user.name + ' ' + user.lastName}}</div>
+    </div>
+    <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+      <div formGroupName="updateUser">
+        <div class="detail">
+          <div class="prop">E-mail</div>
+          <input formControlName="email" class="form-control width" type="text" value="{{user.email}}">
+          <span class="warning-span" *ngIf="!updateForm.get('updateUser').get('email').valid && updateForm.get('updateUser').get('email').touched">
+            Proszę podać poprawny email!<em>(Conajmniej 3 znaki)</em>
+        </span>
+        </div>
+        <div class="detail">
+          <div class="prop">Hasło<i (click)='editPassword()' class="fas fa-user-edit"></i></div>
+          <input *ngIf="passwordEdition" formControlName="password" class="form-control width" type="text" value="s">
+          <span class="warning-span" *ngIf="!updateForm.get('updateUser').get('password').valid && updateForm.get('updateUser').get('password').touched && passwordEdition">
+            Proszę podac poprawne hasło!<em>(Conajmniej 3 znaki)</em>
+        </span>
+        </div>
+        <div class="detail">
+          <div class="prop">Miasto</div>
+          <input formControlName="city" class="form-control width" type="text" value="{{user.city}}">
+          <span class="warning-span" *ngIf="!updateForm.get('updateUser').get('city').valid && updateForm.get('updateUser').get('city').touched">
+            Proszę podać poprawną nazwę miasta!<em>(Conajmniej 3 znaki)</em>
+        </span>
+        </div>
+      </div>
+      <div formGroupName="updatePost">
+        <div class="detail">
+          <div class="prop">Instrument/y</div>
+          <ng-container formArrayName="instruments">
+            <div class="cont inst">
+              <div>
+                <input formControlName="0" class="form-control inst" type="checkbox" id="Gitara" name="Gitara"
+                  value="Gitara elektryczna">
+                <label for="Gitara">Gitara elektryczna</label>
+              </div>
+            </div>
+            <div class="cont inst">
+              <div>
+                <input formControlName="1" class="form-control inst" type="checkbox" id="bas" name="bas"
+                  value="Gitara basowa">
+                <label for="bas">Gitara basowa</label>
+              </div>
+            </div>
+            <div class="cont inst">
+              <div>
+                <input formControlName="2" class="form-control inst" type="checkbox" id="perkusja" name="perkusja"
+                  value="Perkusja">
+                <label for="perkusja">Perkusja</label>
+              </div>
+            </div>
+            <div class="cont inst">
+              <div>
+                <input formControlName="3" class="form-control inst" type="checkbox" id="klawisze" name="klawisze"
+                  value="Klawisze">
+                <label for="klawisze">Klawisze</label>
+              </div>
+            </div>
+            <div class="cont inst">
+              <div>
+                <input formControlName="4" class="form-control inst" type="checkbox" id="wokal" name="wokal"
+                  value="Wokal">
+                <label for="wokal">Wokal</label>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+        <div class="detail">
+          <div class="prop">Poszukiwany rodzaj zespołu</div>
+          <ng-container formArrayName="band">
+            <div class="cont inst">
+              <input formControlName="0" class="form-control" id="Wesela" type="checkbox" value="Wesela" name="Wesela">
+              <label for="Wesela">Wesela</label>
+            </div>
+            <div class="cont inst">
+              <input formControlName="1" class="form-control" id="Zabawy" type="checkbox" value="Zabawy" name="Zabawy">
+              <label for="Zabawy">Zabawy</label>
+            </div>
+            <div class="cont inst">
+              <input formControlName="2" class="form-control" id="Koncerty" type="checkbox" value="Koncerty"
+                name="Koncerty">
+              <label for="Koncerty">Koncerty</label>
+            </div>
+            <div class="cont inst">
+              <input formControlName="3" class="form-control" id="niekomercyjne" type="checkbox" value="niekomercyjne"
+                name="niekomercyjne">
+              <label for="niekomercyjne">Granie niekomercyjne</label>
+            </div>
+          </ng-container>
+        </div>
+        <div class="detail">
+          <div class="prop">O sobie</div>
+          <textarea formControlName="about" maxlength="150" rows="5" class="form-control width"></textarea>
+        </div>
+      </div>
+      <button class="reg" type="submit">Potwierdź</button>
+    </form>
+  </section>
+</main>

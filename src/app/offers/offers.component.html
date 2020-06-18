@@ -1,0 +1,77 @@
+<main>
+  <app-aside-menu-mobile></app-aside-menu-mobile>
+  <button class="outbtn" (click)="logout()" [routerLink]="['/']">Wyloguj</button>
+  <ul class="menu">
+    <li><a *ngIf="userLogged" [routerLink]="['/profile']">Mój Profil</a></li>
+    <li><a *ngIf="userLogged" [routerLink]="['/offers']">Ogłoszenia</a></li>
+    <li><a *ngIf="userLogged" [routerLink]="['/schedule']">Harmonogram</a></li>
+    <li><a *ngIf="userLogged" [routerLink]="['/myband']">Mój zespół</a></li>
+  </ul>
+  <nav class="filters">
+    <ul class="filterList">
+      <li class="fil" (click)="showOptions(0)">Filtruj:
+        <aside id="filtr" class="filter none">
+          <div *ngFor="let option of tempFilterOptionsArray" class="option"><i class="fas fa-plus"></i></div>
+        </aside>
+      </li>
+      <li (click)="showOptions(1)">Miasto
+        <aside id="filtr" class="filter none">
+          <input (keyup)="loadHints($event.target.value)" (keyup.enter)="addCityFilter($event.target.value)"
+            class="city" type="text" (click)="colorChange($event, 1)">
+          <ul>
+            <ng-container *ngFor="let city of posts">
+              <li (click)="getPostWithCity(city.city)" *ngIf="citiesForInput.includes(city.city)" class="liCity">
+                {{city.city}}</li>
+            </ng-container>
+          </ul>
+        </aside>
+      </li>
+      <li (click)="showOptions(2)">Instrumenty
+        <aside id="filtr" class="filter none">
+          <div *ngFor="let option of filters[0]; let i=index"
+            (click)="addInstrumentFilter(option); colorChange($event, 2)" class="option dark">
+            {{option}}<i class="fas fa-toggle-on {{option.replace(' ', '')}}"></i></div>
+        </aside>
+      </li>
+      <li (click)="showOptions(3)">Przeznaczenie zespołu
+        <aside id="filtr" class="filter none">
+          <div *ngFor="let option of filters[1]; let i=index" (click)="addBandFilter(option); colorChange($event, 3)"
+            class="option dark">
+            {{option}}<i class="fas fa-plus {{i}}"></i></div>
+        </aside>
+      </li>
+    </ul>
+    <app-aijo (valueChange)='showText($event)'></app-aijo>
+  </nav>
+  <section class="offers">
+    <article *ngFor="let post of tmpPosts" class="offer">
+      <ng-container *ngIf="checkInstruments(post.instruments)">
+        <ng-container *ngIf="checkBand(post.band) || noBandInput == true">
+          <ng-container
+            *ngIf="post.city.toUpperCase() == wantedPostCity.toUpperCase() || wantedPostCity == 'none' || wantedPostCity == ''">
+            <ng-container *ngIf="noCityInput || post.city.toUpperCase().startsWith(cityInput.toUpperCase())">
+              <div class="img">
+                <img src="../assets/user.png" alt="">
+                <h1>{{post.date | date}}</h1>
+              </div>
+              <div class="info">
+                <p>Miasto: {{post.city}}</p>
+                <p>Instrument/y:
+                  <span *ngFor="let instrument of post.instruments; let i=index">
+                    <ng-container *ngIf="instrument"> {{instrumentsNames[i]}} |</ng-container></span>
+                </p>
+                <p class="unv {{post.name}}">Rodzaj zespołu:
+                  <span *ngFor="let band of post.band; let i=index">
+                    <ng-container *ngIf="band"> {{bandsNames[i]}} |</ng-container></span>
+                </p>
+                <p class="unv {{post.name}}">{{post.name}} - {{post.email}}</p>
+                <p class="unv {{post.name}}">{{post.about}}</p>
+                <i (click)="show(post.name)" class="fas fa-caret-square-down {{post.name}}"></i>
+              </div>
+            </ng-container>
+          </ng-container>
+        </ng-container>
+      </ng-container>
+    </article>
+  </section>
+</main>

@@ -1,0 +1,98 @@
+main
+    min-height: 100vh
+    background-image: url('/assets/schedule.jpg')
+    background-attachment: fixed
+    background-size: cover
+    // background-color: #ced8cc
+    padding-top: 20vh
+
+    .menu
+        display: flex
+        list-style-type: none
+        position: absolute
+        top: 2%
+        left: 25%
+        z-index: 10000
+        height: 12vh
+        width: 50vw
+        justify-content: space-between
+        align-items: center
+        align-items: center
+        background-color: rgba(0, 0, 0, .4)
+        padding: 0 10px
+        color: #fff
+
+        li
+            a
+                color: #fff
+                text-decoration: none
+                text-transform: uppercase
+                font-size: 28px
+
+                &:hover
+                    cursor: pointer
+                    color: #ccc
+
+    h1
+        position: relative
+        text-align: center
+        color: #fff
+        margin-bottom: 50px
+
+        i
+            position: absolute
+            top: 50%
+            right: 40px
+            transform: translate(0, -50%)
+            cursor: pointer
+            transition: .3s
+            font-size: 40px
+            color: #0c990c
+
+            &:hover
+                color: #0fee1a
+
+    article
+        height: 16vh
+        background-color: #272c25e7
+        border-bottom: 2px solid #000
+        color: #ffffff
+        text-align: center
+        position: relative
+
+        i
+            position: absolute
+            top: 50%
+            right: 20px
+            transform: translate(0, -50%)
+            cursor: pointer
+            transition: .3s
+            font-size: 48px
+            color: #be0505
+
+            &:hover
+                color: #ee0f0f
+
+        .fa-check-circle
+            color: green
+            cursor: pointer
+
+            &:hover
+                color: #0f0
+
+        i.yellow 
+            color: yellow
+
+        h2
+            font-size: 30px
+            line-height: 8vh
+            margin: 0
+
+            .city
+                height: 6vh
+                text-align: center
+
+        h3
+            font-size: 18px
+            line-height: 8vh
+            margin: 0

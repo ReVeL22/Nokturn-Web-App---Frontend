@@ -1,0 +1,55 @@
+<main>
+  <app-aside-menu-mobile></app-aside-menu-mobile>
+  <ul class="menu_main">
+    <li class="li"><a *ngIf="userLogged" [routerLink]="['/profile']">Mój Profil</a></li>
+    <li class="li"><a *ngIf="userLogged" [routerLink]="['/offers']">Ogłoszenia</a></li>
+    <li class="li"><a *ngIf="userLogged" [routerLink]="['/schedule']">Harmonogram</a></li>
+    <li class="li"><a *ngIf="userLogged" [routerLink]="['/myband']">Mój zespół</a></li>
+  </ul>
+  <ng-container *ngIf="band && loggedUserData">
+    <h1 class="bandName">{{band.name}}</h1>
+    <ul>
+      <li *ngFor="let musician of bandMembers; let i = index">
+        <h1>{{musician.name}} - {{musician.email}}</h1>
+        <i *ngIf="i!=0 && loggedUserData._id == band.usersId[0]" class="far fa-times-circle qwe"></i>
+      </li>
+      <li *ngIf="loggedUserData._id == band.usersId[0]">
+        <h1 *ngIf="edition == false" (click)="edition = !edition" class="newMusician">Dodaj nowego muzyka</h1>
+        <h1 *ngIf="edition == true" (click)="edition = !edition" class="newMusician">Anuluj dodawanie</h1>
+      </li>
+      <li *ngIf="loggedUserData._id == band.usersId[0]">
+        <h1 (click)="deleteBand()" class="newMusician">Usuń zespół</h1>
+      </li>
+      <li *ngIf="loggedUserData._id != band.usersId[0]">
+        <h1 (click)="leaveBand()" class="newMusician">Opuść zespół</h1>
+      </li>
+      <ng-container *ngIf="edition">
+        <label for="musicians">Wybierz muzyka:</label>
+        <select (change)="invitedUser = $event.target.value" id="musicians" name="musicians">
+          <option *ngFor="let user of users" value="{{user._id}}">{{user.email}}</option>
+        </select>
+        <input (click)="sendInvite(invitedUser, band.name)" class="submit" type="submit">
+      </ng-container>
+    </ul>
+  </ng-container>
+  <ng-container *ngIf="!band">
+    <h1>Nie należysz obecnie do żadnego zespołu</h1>
+    <button *ngIf="newBand == false" (click)="newBand = true" class="btn">Utwórz nowy zespół</button>
+    <button *ngIf="newBand == true" (click)="newBand = false" class="btn">Anuluj tworzenie zespołu</button>
+  </ng-container>
+  <article *ngIf="newBand == true">
+    <input (keyup)="newBandName.name = $event.target.value" class="city" type="text" placeholder="Nazwa zespołu">
+    <button (click)="submit()" [disabled]="!newBandName" class="btnSend">Prześlij</button>
+  </article>
+  <ng-container *ngIf="!band">
+    <h1 style="margin-top: 100px;">Zaproszenia do zespołów:</h1>
+    <ul *ngIf="invites && !band" class="invites">
+      <li *ngFor="let invite of invites">
+        <i (click)="deleteInvite(invite.userId)" class="delete fas fa-times-circle"></i>
+        <h1>{{invite.name}}</h1>
+        <i (click)="joinTheBand(invite)" class="add fas fa-plus"></i>
+      </li>
+    </ul>
+    <h1 *ngIf="!invites">Brak zaproszeń</h1>
+  </ng-container>
+</main>

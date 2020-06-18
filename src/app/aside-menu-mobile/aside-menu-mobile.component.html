@@ -1,0 +1,29 @@
+<nav class="aside-nav">
+  <ul>
+    <li class="nav-login">
+      <span class="half-tone"></span><a *ngIf="!userLogged" (click)="hamburger()" [routerLink]="['/login']">Logowanie</a>
+      <a *ngIf="userLogged" (click)="hamburger()" [routerLink]="['/profile']">Mój Profil</a>
+    </li>
+    <li class="nav-register">
+      <span class="half-tone"></span><a *ngIf="!userLogged" (click)="hamburger()" [routerLink]="['/register']">Rejestracja</a>
+      <a *ngIf="userLogged" (click)="hamburger()" [routerLink]="['/offers']">Ogłoszenia</a>
+    </li>
+    <li class="nav-inf">
+      <span class="half-tone"></span><a *ngIf="!userLogged" (click)="hamburger()" [routerLink]="['/about']">O nas</a>
+      <a *ngIf="userLogged" (click)="hamburger()" [routerLink]="['/schedule']">Harmonogram</a>
+    </li>
+    <li class="nav-inf">
+      <a *ngIf="userLogged" (click)="hamburger()" [routerLink]="['/myband']">Mój zespół</a>
+    </li>
+    <li class="nav-inf">
+      <span class="half-tone"></span>
+      <a *ngIf="userLogged" (click)="logout()" [routerLink]="['/']">Wyloguj</a>
+    </li>
+    <li class="nav-inf"><span class="half-tone"></span></li>
+    <li class="nav-inf"></li>
+    <li class="nav-inf"><span class="half-tone"></span>
+    </li>
+    <li class="nav-inf"><span class="half-tone"></span>
+    </li>
+  </ul>
+</nav>

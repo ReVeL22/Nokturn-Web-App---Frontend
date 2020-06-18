@@ -1,0 +1,6 @@
+<div class="pole">
+  <div>Wpisz czego szukasz tekstowo:</div>
+  <textarea (keyup)="iColor($event)" placeholder="np. szukam gitarzysty do zespołu metalowego..." name="" id=""
+    cols="10" rows="5" maxlength="100"></textarea>
+  <button (click)="filter()" [disabled]="disabled" class=" i"><i class="fas fa-arrow-alt-circle-right"></i></button>
+</div>

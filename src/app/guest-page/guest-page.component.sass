@@ -1,0 +1,551 @@
+@keyframes btnTrick
+    16%
+        bottom: 0
+        height: 100%
+        left: 0
+        width: 1px
+
+    31%
+        bottom: 0
+        height: 1px
+        width: 1px
+        left: 0
+
+    70%
+        bottom: 0
+        height: 1px
+        width: 100%
+        left: 0
+
+    100%
+        bottom: 0
+        height: 1px
+        width: 0
+        left: 100%
+    
+@keyframes btnTrick2
+    16%
+        height: calc(100% - 1px)
+        bottom: 0
+        right: 0
+        width: 1px
+
+    31%
+        bottom: 100%
+        height: 1px
+        width: 1px
+        right: 0
+
+    70%
+        width: 100%
+        right: 0
+
+    100%
+        width: 0
+        right: 100%
+        bottom: 100%
+
+@keyframes shake 
+    10%
+        transform: translate(0, -50%) rotate(-7deg)
+            
+    20%
+        transform: translate(0, -50%) rotate(7deg)
+            
+    30%
+        transform: translate(0, -50%) rotate(-7deg)
+            
+    40%
+        transform: translate(0, -50%) rotate(7deg)
+            
+    50%
+        transform: translate(0, -50%) rotate(-7deg)
+            
+    60%
+        transform: translate(0, -50%) rotate(7deg)
+            
+    70%
+        transform: translate(0, -50%) rotate(-7deg)
+            
+    80%
+        transform: translate(0, -50%) rotate(7deg)
+            
+    90%
+        transform: translate(0, -50%) rotate(-7deg)
+            
+@keyframes invBreak 
+    0%
+        opacity: 0
+            
+    90%
+        opacity: 0
+            
+    100%
+        opacity: 1
+    
+main
+    min-height: 100vh
+    top: 0
+    left: 0
+    background-color: #000
+    position: relative
+    background-image: url('/assets/guitara1536x1024.jpg')
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    background-attachment: fixed
+    opacity: 1
+    overflow: hidden
+
+    .sec-first
+        display: none
+
+    .sec-second
+        overflow: auto
+        min-height: 100vh
+        text-align: center
+        .steps
+            margin-top: 15vh
+            display: flex
+            flex-direction: column
+            align-items: center
+            color: #ffffff
+            .step 
+                width: 80%
+                text-align: center
+                letter-spacing: 1px
+                font-size: 24px
+                h1 
+                    text-align: center
+                    margin: 20px 0
+        .reg-btn
+            margin: 40px 0
+            // width: 50vw
+            line-height: 70px
+            padding: 0 20px
+            font-size: 28px
+            text-transform: uppercase
+            background-color: #9c000a
+            border: 2px solid #640209
+            color: #eee
+
+@media (min-width: 760px)
+    main
+        .sec-second
+            .steps
+                align-items: center
+                .step
+                    width: 80%
+                    font-size: 32px
+                    text-align: justify
+                    hyphens: manual
+            .reg-btn
+                font-size: 48px
+                padding: 0 30px
+                line-height: 100px
+
+@media (min-width: 760px) and (orientation: landscape)
+    main
+        .sec-second
+            .steps
+                .step
+                    width: 70%
+                    font-size: 32px
+            .reg-btn
+                font-size: 36px
+
+@media (min-width: 900px)
+    main
+        .sec-second
+            .steps
+                margin-top: 15vh
+                display: flex
+                flex-direction: row
+                align-items: center
+                color: #ffffff
+                flex-wrap: wrap
+                justify-content: space-around
+                .step 
+                    flex-basis: 40%
+                    min-height: 200px
+                    text-align: center
+                    letter-spacing: 1px
+                    font-size: 24px
+                    h1 
+                        text-align: center
+                        margin: 20px 0
+            .reg-btn
+                font-size: 48px
+                padding: 0 30px
+                line-height: 100px
+        
+@media (min-width: 1020px)
+    main
+        min-height: 100vh
+        background: none
+        overflow-y: hidden
+        .sec-first
+            display: block
+            
+        .sec-first
+            height: 100vh
+            background-image: url('/assets/guitara1536x1024.jpg')
+            background-size: cover
+            background-position: center
+            background-repeat: no-repeat
+            button.letsGo 
+                position: absolute
+                top: 50vh
+                right: calc(50vw - 15vw)
+                transform: translate(0, -50%)
+                background-color: rgb(117, 16, 16)
+                border: 2px solid rgb(161, 111, 46)
+                padding: 15px 20px
+                color: #fff
+                line-height: 9vh
+                width: 30vw
+                font-size: 56px
+                cursor: pointer
+                animation: invisible .7s .4s linear both
+                transition: .3s
+                z-index: 1
+                box-shadow: 0 0 5px 2px black
+                &:hover 
+                    background-color: rgba(67, 0, 0)
+                &:hover~.s1 
+                    right: calc(50vw + 15vw + 2px)
+                    border-radius: 10% 0 0 10%
+                &:hover~.s2 
+                    right: calc(50vw - 45vw - 2px)
+                    border-radius: 0 10% 10% 0
+            .letsGoSub 
+                position: absolute
+                width: 30vw
+                top: 50vh
+                right: calc(50vw - 15vw)
+                transform: translate(0, -50%)
+                line-height: 9vh
+                text-align: center
+                box-shadow: 0 0 0 2px rgb(133, 11, 0)
+                transition: .5s
+                opacity: 1
+                background-color: rgb(153, 31, 0)
+                cursor: pointer
+                border: none
+                color: #fff
+                font-size: 36px
+                font-family: 'Trade Winds', cursive
+            .invBreak
+                animation: invBreak .1s 1s linear both
+            .shakeClass 
+                animation: shake .8s linear none
+                background-color: rgba(255, 255, 255, .9)
+                color: black
+            .s1:hover 
+                right: calc(50vw + 15vw + 2px)
+                border-radius: 10% 0 0 10%
+                box-shadow: 0 0 3px 2px rgb(224, 209, 209)
+                background-color: rgb(43, 0, 0)
+            .s2:hover 
+                right: calc(50vw - 45vw - 2px)
+                border-radius: 0 10% 10% 0
+                box-shadow: 0 0 3px 2px rgb(224, 209, 209)
+                background-color: rgb(43, 0, 0)
+        .sec-second 
+            position: relative
+            height: auto
+            min-height: 100vh
+            background-color: rgb(0, 0, 0)
+            overflow: visible
+            border: none
+
+            .steps 
+                margin: 0
+                padding-top: 8vh
+                display: flex
+                color: white
+                letter-spacing: 1px
+                flex-direction: row
+                align-items: stretch
+                justify-content: stretch
+                justify-items: stretch
+                flex-wrap: wrap
+                height: 80vh
+                .step 
+                    flex-basis: 50%
+                    text-align: center
+                    padding: 10px 50px
+                    font-size: 32px
+
+                    p 
+                        margin-top: 40px
+                        line-height: 1.6
+                        text-align: center
+                h1 
+                    font-size: 2.6rem
+                    background-color: rgba(21, 133, 167, 0.3)
+                    border-radius: 50%
+                div:first-of-type h1 
+                    background-color: rgba(146, 3, 3, 0.15)
+                div:nth-of-type(2) h1 
+                    background-color: rgba(146, 3, 3, 0.25)
+                div:nth-of-type(3) h1 
+                    background-color: rgba(146, 3, 3, 0.35)
+                div:nth-of-type(4) h1 
+                    background-color: rgba(146, 3, 3, 0.45)
+            .reg-btn 
+                position: relative
+                display: block
+                background-color: rgb(119, 8, 8)
+                // transform: translate(-50%, 50%)
+                height: 10vh
+                width: 32vw
+                color: white
+                font-size: 36px
+                cursor: pointer
+                line-height: 10vh
+                text-transform: uppercase
+                letter-spacing: 3px
+                border: none
+                padding: 0
+                margin: 50px auto 100px
+                &:hover 
+                    background-color: rgb(92, 2, 2)
+                &:hover::before 
+                    opacity: 1
+                    animation: btnTrick 1s ease infinite
+                &:hover::after 
+                    opacity: 1
+                    animation: btnTrick2 1s ease infinite
+                &::before,
+                &::after 
+                    content: ""
+                    position: absolute
+                    opacity: 0
+                    height: 0
+                    width: 0
+                    box-shadow: 0 0 6px 2px rgb(86, 59, 241)
+                &::before 
+                    bottom: 100%
+                    left: -2px
+                &::after 
+                    bottom: 0
+                    right: -2px
+
+@media (min-width: 1020px) and (orientation: landscape)
+    main
+        min-height: 100vh
+        background: none
+        overflow-y: hidden
+        .sec-first
+            display: block
+            
+        .sec-first
+            height: 100vh
+            background-image: url('/assets/guitara1536x1024.jpg')
+            background-size: cover
+            background-position: center
+            background-repeat: no-repeat
+            button.letsGo 
+                position: absolute
+                top: 50vh
+                right: calc(50vw - 15vw)
+                transform: translate(0, -50%)
+                background-color: rgb(117, 16, 16)
+                border: 2px solid rgb(161, 111, 46)
+                padding: 15px 20px
+                color: #fff
+                line-height: 9vh
+                width: 30vw
+                font-size: 56px
+                cursor: pointer
+                animation: invisible .7s .4s linear both
+                transition: .3s
+                z-index: 1
+                box-shadow: 0 0 5px 2px black
+                &:hover 
+                    background-color: rgba(67, 0, 0)
+                &:hover~.s1 
+                    right: calc(50vw + 15vw + 2px)
+                    border-radius: 10% 0 0 10%
+                &:hover~.s2 
+                    right: calc(50vw - 45vw - 2px)
+                    border-radius: 0 10% 10% 0
+            .letsGoSub 
+                position: absolute
+                width: 30vw
+                top: 50vh
+                right: calc(50vw - 15vw)
+                transform: translate(0, -50%)
+                line-height: 9vh
+                text-align: center
+                box-shadow: 0 0 0 2px rgb(133, 11, 0)
+                transition: .5s
+                opacity: 1
+                background-color: rgb(153, 31, 0)
+                cursor: pointer
+                border: none
+                color: #fff
+                font-size: 36px
+                font-family: 'Trade Winds', cursive
+            .invBreak
+                animation: invBreak .1s 1s linear both
+            .shakeClass 
+                animation: shake .8s linear none
+                background-color: rgba(255, 255, 255, .9)
+                color: black
+            .s1:hover 
+                right: calc(50vw + 15vw + 2px)
+                border-radius: 10% 0 0 10%
+                box-shadow: 0 0 3px 2px rgb(224, 209, 209)
+                background-color: rgb(43, 0, 0)
+            .s2:hover 
+                right: calc(50vw - 45vw - 2px)
+                border-radius: 0 10% 10% 0
+                box-shadow: 0 0 3px 2px rgb(224, 209, 209)
+                background-color: rgb(43, 0, 0)
+        .sec-second 
+            position: relative
+            height: auto
+            min-height: 100vh
+            background-color: rgb(0, 0, 0)
+            overflow: visible
+            border: none
+
+            .steps 
+                margin: 0
+                padding-top: 8vh
+                display: flex
+                color: white
+                letter-spacing: 1px
+                flex-direction: row
+                align-items: stretch
+                justify-content: stretch
+                justify-items: stretch
+                flex-wrap: wrap
+                height: 80vh
+                .step 
+                    flex-basis: 50%
+                    text-align: center
+                    padding: 10px 50px
+                    font-size: 32px
+
+                    p 
+                        margin-top: 40px
+                        line-height: 1.6
+                        text-align: center
+                h1 
+                    font-size: 2.6rem
+                    background-color: rgba(21, 133, 167, 0.3)
+                    border-radius: 50%
+                div:first-of-type h1 
+                    background-color: rgba(146, 3, 3, 0.15)
+                div:nth-of-type(2) h1 
+                    background-color: rgba(146, 3, 3, 0.25)
+                div:nth-of-type(3) h1 
+                    background-color: rgba(146, 3, 3, 0.35)
+                div:nth-of-type(4) h1 
+                    background-color: rgba(146, 3, 3, 0.45)
+            .reg-btn 
+                position: relative
+                display: block
+                background-color: rgb(119, 8, 8)
+                // transform: translate(-50%, 50%)
+                height: 10vh
+                width: 32vw
+                color: white
+                font-size: 36px
+                cursor: pointer
+                line-height: 10vh
+                text-transform: uppercase
+                letter-spacing: 3px
+                border: none
+                padding: 0
+                margin: 50px auto 100px
+                &:hover 
+                    background-color: rgb(92, 2, 2)
+                &:hover::before 
+                    opacity: 1
+                    animation: btnTrick 1s ease infinite
+                &:hover::after 
+                    opacity: 1
+                    animation: btnTrick2 1s ease infinite
+                &::before,
+                &::after 
+                    content: ""
+                    position: absolute
+                    opacity: 0
+                    height: 0
+                    width: 0
+                    box-shadow: 0 0 6px 2px rgb(86, 59, 241)
+                &::before 
+                    bottom: 100%
+                    left: -2px
+                &::after 
+                    bottom: 0
+                    right: -2px
+
+    @media (min-width: 1240px)
+    main
+        .sec-second
+            .reg-btn
+                height: 12vh
+                width: 34vw
+                font-size: 42px
+                line-height: 12vh
+                margin-top: 0
+
+@media (min-width: 1400px)
+    main
+        
+        .sec-first
+
+            button.letsGo 
+                right: 26vw
+                padding: 15px 20px
+                line-height: 9vh
+                width: 16vw
+                font-size: 5vh
+                cursor: pointer
+
+                &:hover~.s1 
+                    right: 42vw
+                &:hover~.s2 
+                    right: 10vw
+            .letsGoSub 
+                width: 16vw
+                top: 50vh
+                right: 26vw
+                line-height: 9vh
+                font-size: 3vh
+            .s1:hover 
+                right: 42vw
+            .s2:hover 
+                right: 10vw
+        .sec-second 
+            
+            background-color: #41454d
+            height: auto
+            min-height: 100vh
+            .steps
+                color: #fff
+                padding-top: 8vh
+                height: 80%
+                flex-direction: row
+                .step 
+                    flex-basis: 25%
+                    padding: 10px 50px
+                    font-size: 24px
+
+                    p 
+                        margin-top: 40px
+                        line-height: 1.6
+                h1 
+                    font-size: 2.6rem
+
+            .reg-btn 
+                height: 10vh
+                width: 24vw
+                font-size: 32px
+                line-height: 10vh
+                margin: 100px auto 100px

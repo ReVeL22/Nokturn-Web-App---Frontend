@@ -10,7 +10,13 @@
     "module": "esnext",
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2015",
+    "emitDecoratorMetadata": true,
+    "target": "ES5",
+    "paths": {
+      "@/*": [
+        "app/*"
+      ]
+    },
     "lib": [
       "es2018",
       "dom"

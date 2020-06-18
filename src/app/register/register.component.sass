@@ -1,0 +1,286 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css'
+
+main
+    // position: relative
+    // height: 100vh
+    height: auto
+    min-height: 100vh
+    background-image: url('/assets/guitara1536x1024.jpg')
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    background-attachment: fixed
+    color: #fff
+
+    .logbtn
+        position: absolute
+        text-transform: uppercase
+        top: 2%
+        right: 20%
+        line-height: 10vh
+        width: 14vw
+        font-size: 28px
+        background-color: #9c000a
+        border: 2px solid #640209
+        color: #eee
+        transition: .3s
+        cursor: pointer
+        z-index: 10000
+
+        &:hover
+            background-color: #580008
+
+    section.content
+        position: static
+        // height: 70vh
+        // min-height: 70vh
+        height: auto
+        width: 90vw
+        padding-top: 14vh
+        margin: 0 auto
+        // border: 2px solid #ddd
+        // top: -50%
+        // left: 50%
+        // margin-top: 150px
+        // transform: translate(-50%, -50%)
+        // background-color: rgba(0, 0, 0, .1)
+        text-align: center
+        form
+            height: auto
+            // padding-bottom: 10px
+            .form-group
+                height: auto
+                display: flex
+                flex-direction: column
+                justify-content: space-around
+                align-items: center
+                text-transform: uppercase
+                letter-spacing: 2px
+                font-size: 24px
+                label
+                    // color: green
+                    &+.ng-valid.ng-touched
+                        border: 2px inset #0d851d
+                    &+.ng-invalid.ng-touched
+                        border: 2px inset #850d0d
+                input 
+                    flex-basis: 7%
+                    width: 90%
+                    background-color: rgba(255, 255, 255, .1)
+                    color: #fff
+                    font-size: 20px
+                    padding-left: 10px
+                    margin: 5px 0
+                .warning-span
+                    font-size: 10px
+                    color: red
+                    margin-top: 2px
+            .reg 
+                width: 50%
+                height: 10vh
+                margin: 7% 0 20px 0
+                font-size: 20px
+                text-transform: uppercase
+                color: #ffffff
+                background-color: #8f0e0e
+                border: 2px solid #869470
+                &:hover
+                    background-color: #6d0c0c
+
+@media (min-width: 760px)
+    main
+    
+        section.content
+            width: 70vw
+            padding-top: 14vh
+
+            form
+                font-size: 28px
+
+                .form-group
+
+                    input
+                        flex-basis: 50px
+                        width: 90%
+                        background-color: rgba(255, 255, 255, .1)
+                        color: #fff
+                        font-size: 20px
+                        padding-left: 10px
+                        margin: 10px 0
+
+                    .warning-span
+                        font-size: 16px
+                        color: red
+                        margin-top: 2px
+                .reg 
+                    width: 50%
+                    height: 10vh
+                    margin: 7% 0 20px 0
+                    font-size: 24px
+                    text-transform: uppercase
+                    color: #ffffff
+                    background-color: #8f0e0e
+                    border: 2px solid #869470
+
+@media (min-width: 720px) and (orientation: landscape)
+    main
+        section.content
+            width: 60vw
+            padding-top: 14vh
+
+            form
+                font-size: 28px
+
+                .form-group
+
+                    input
+                        flex-basis: 50px
+                        width: 90%
+                        font-size: 20px
+                        padding-left: 10px
+                        margin: 10px 0
+
+                    .warning-span
+                        font-size: 16px
+
+@media (min-width: 1020px)
+    main
+    
+        section.content
+            width: 70vw
+            padding-top: 14vh
+
+            form
+                // display: flex
+                // flex-direction: column
+                font-size: 28px
+
+                .form-group
+
+                    input
+                        flex-basis: 60px
+                        width: 80%
+                        background-color: rgba(255, 255, 255, .1)
+                        color: #fff
+                        font-size: 20px
+                        padding-left: 10px
+                        margin: 20px 0
+
+                    .warning-span
+                        font-size: 16px
+                        color: red
+                        margin-top: 2px
+                .reg 
+                    width: 50%
+                    height: 8vh
+                    margin: 10% 0 20px 0
+                    font-size: 32px
+                    text-transform: uppercase
+                    color: #ffffff
+                    background-color: #8f0e0e
+                    border: 2px solid #869470
+
+@media (min-width: 1020px) and (orientation: landscape)
+    main
+
+        section.content
+            width: 36vw
+            padding-top: 14vh
+
+            form
+                // display: flex
+                // flex-direction: column
+                font-size: 28px
+
+                .form-group
+
+                    input
+                        flex-basis: 30px
+                        width: 100%
+                        background-color: rgba(255, 255, 255, .1)
+                        color: #fff
+                        font-size: 20px
+                        padding-left: 10px
+                        margin: 20px 0
+
+                    .warning-span
+                        font-size: 16px
+                        color: red
+                        margin-bottom: 5px
+                .reg 
+                    width: 50%
+                    height: 8vh
+                    margin: 10% 0 20px 0
+                    font-size: 24px
+                    text-transform: uppercase
+                    color: #ffffff
+                    background-color: #8f0e0e
+                    border: 2px solid #869470
+
+@media (min-width: 1240px)
+    main
+    
+        section.content
+            width: 30vw
+            padding-top: 14vh
+
+            form
+                // display: flex
+                // flex-direction: column
+                font-size: 28px
+
+                .form-group
+
+                    input
+                        flex-basis: 34px
+                        width: 90%
+                        background-color: rgba(255, 255, 255, .1)
+                        color: #fff
+                        font-size: 20px
+                        padding-left: 10px
+                        margin: 10px 0
+
+                    .warning-span
+                        font-size: 14px
+                        color: red
+                        margin-top: 2px
+                .reg 
+                    width: 50%
+                    height: 8vh
+                    margin: 10% 0 20px 0
+                    font-size: 24px
+                    text-transform: uppercase
+                    color: #ffffff
+                    background-color: #8f0e0e
+                    border: 2px solid #869470
+
+@media (min-width: 1400px)
+    main
+    
+        section.content
+            width: 24vw
+            padding-top: 14vh
+
+            form
+                // display: flex
+                // flex-direction: column
+                font-size: 24px
+
+                .form-group
+
+                    input
+                        flex-basis: 34px
+                        width: 90%
+                        background-color: rgba(255, 255, 255, .1)
+                        color: #fff
+                        font-size: 20px
+                        padding-left: 10px
+                        margin: 10px 0
+
+                    .warning-span
+                        font-size: 8px
+                        color: red
+                        margin-top: 2px
+                .reg 
+                    font-size: 20px
+                    cursor: pointer

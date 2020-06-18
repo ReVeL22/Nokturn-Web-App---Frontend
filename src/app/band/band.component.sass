@@ -1,0 +1,173 @@
+main
+    min-height: 100vh
+    // background-color: #ced8cc
+    background-image: url('/assets/band.jpg')
+    background-attachment: fixed
+    background-size: cover
+    padding-top: 20vh
+    color: #000
+
+    .menu_main
+        display: flex
+        list-style-type: none
+        position: absolute
+        top: 2%
+        left: 25%
+        z-index: 10000
+        height: 12vh
+        width: 50vw
+        justify-content: space-between
+        align-items: center
+        align-items: center
+        // background-color: rgba(0, 0, 0, .7)
+        padding: 0 10px
+
+        .li
+            padding: 0
+            background-color: transparent
+            height: 100%
+            line-height: 100%
+            font-size: 28px
+            position: static
+
+            &:hover
+                background-color: transparent
+            
+            a
+                color: #fff
+                text-decoration: none
+                text-transform: uppercase
+                font-size: 28px
+
+                &:hover
+                    cursor: pointer
+                    color: #ccc
+
+                
+    h1
+        color: #cab6b6
+        text-align: center
+        margin-bottom: 50px
+
+    .bandName
+        background-color: rgba(0, 0, 0, .9)
+
+    ul
+        label
+            padding-top: 20px
+            color: #fff
+            display: block
+            text-align: center
+            font-size: 24px
+
+        li
+            position: relative
+
+            i.fa-times-circle
+                position: absolute
+                right: 22%
+                top: 50%
+                transform: translate(0, -50%)
+
+        select
+            display: block
+            margin: 20px auto
+            width: 40vw
+            height: 4vh
+            color: #fff
+
+            option
+                width: 40vw
+                height: 4vh
+                color: #fff
+
+        .submit
+            display: block
+            margin: 40px auto
+            width: 60%
+            line-height: 40px
+            background-color: #920a0a
+            text-transform: uppercase
+            font-size: 24px
+            color: #fff
+
+        li
+            padding: 0 10%
+            color: #ffffff
+            background-color: #030008e6
+            height: 70px
+            line-height: 70px
+            font-size: 30px
+            position: relative
+
+            .qwe
+                position: absolute
+                top: 50%
+                right: 2%
+                transform: translate(0, -50%)
+                color: #f00
+                transition: .3s
+
+                &:hover
+                    color: #a00f0f
+
+            .fa-plus
+                position: absolute
+                top: 50%
+                right: 10%
+                transform: translate(0, -50%)
+                color: #02ad02
+
+                &:hover
+                    color: #0f0
+
+            .fa-times-circle
+                position: absolute
+                top: 50%
+                left: 10%
+                transform: translate(0, -50%)
+                color: #b10404
+
+                &:hover
+                    color: #f00
+
+        li:nth-child(2)
+
+            transition: .3s
+
+            .newMusician
+                text-transform: uppercase
+
+            &:hover
+                background-color: #444
+
+    .btn
+        display: block
+        margin-left: auto
+        margin-right: auto
+        width: 60%
+        height: 60px
+        font-size: 24px
+        background-color: #3d3c4b
+        color: #eee
+
+        &:hover
+            background-color: #5f5e6d
+
+    article
+
+        input
+            display: block
+            margin: 50px auto 0
+            height: 40px
+            width: 48%
+            font-size: 20px
+
+        .btnSend
+            display: block
+            margin: 50px auto 0
+            width: 40%
+            height: 60px
+            font-size: 24px
+            background-color: #641414
+            color: #eee

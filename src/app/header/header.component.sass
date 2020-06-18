@@ -1,0 +1,82 @@
+header
+    display: flex
+    top: 0
+    left: 0
+    line-height: 14vh
+    background-color: rgba(0, 0, 0, .5)
+    color: #fff
+    font-family: arial
+    font-size: 40px
+    text-transform: to-upper-case('')
+    padding-left: 6%
+    padding-right: 6%
+    position: fixed
+    width: 100%
+    z-index: 1
+    p.header-title 
+        flex-basis: calc(100% - 12vh)
+        font-family: 'Caveat', cursive
+        letter-spacing: 4px
+        a
+            text-decoration: none
+            color: #fff
+    nav.nav-ham
+        position: relative
+        margin: 4.5vh 0
+        flex-basis: 9vh
+        cursor: pointer
+        .ham-el
+            width: 80%
+            height: 7%
+            border-radius: 20%
+            background-color: #fff
+            position: absolute
+            top: 10%
+            left: 10%
+            transition: 1s
+            &:nth-of-type(1)
+                // animation: navAniTop 1s linear both
+            &:nth-of-type(2)
+                top: 45%
+                transition: .7s
+            &:nth-of-type(3)
+                top: 90%
+                transform: translate(0, -100%)
+            &:nth-of-type(4)
+                top: 45%
+                transition: .7s
+            &.active:nth-of-type(2)
+                transform: rotate(45deg)
+            &.active:nth-of-type(4)
+                transform: rotate(-45deg)
+            &.not-active
+                width: 0
+                opacity: 0
+
+@media (min-width: 720px) 
+    header
+        font-size: 60px
+
+@media (min-width: 1020px)
+    header
+        display: block
+        line-height: 14vh
+        background-color: transparent
+        color: #fff
+        font-family: arial
+        font-size: 40px
+        // text-transform: uppercase
+        padding: 0
+        margin: 0
+        position: fixed
+        width: 100%
+        z-index: 1
+        nav
+            display: none
+        p.header-title 
+            width: 100%
+            padding-right: 5%
+            text-align: right
+            font-size: 60px
+            a
+                color: #fff

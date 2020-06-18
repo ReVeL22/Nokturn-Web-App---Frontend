@@ -1,0 +1,420 @@
+main
+    min-height: 100vh
+    padding-top: calc(14vh + 80px)
+    padding-bottom: 50px
+    background-color: black
+
+    .outbtn
+        position: absolute
+        text-transform: uppercase
+        top: 2%
+        left: 5%
+        line-height: 10vh
+        width: 14vw
+        font-size: 28px
+        background-color: #8f2e35
+        border: 2px solid #640209
+        color: #eee
+        transition: .3s
+        cursor: pointer
+        z-index: 10000
+
+        &:hover
+            background-color: #580008
+
+    .menu
+        display: flex
+        list-style-type: none
+        position: absolute
+        top: 2%
+        left: 25%
+        z-index: 10000
+        height: 12vh
+        width: 50vw
+        justify-content: space-between
+        align-items: center
+        align-items: center
+        background-color: rgba(0, 0, 0, .4)
+        padding: 0 10px
+
+        li
+            a
+                color: #fff
+                text-decoration: none
+                text-transform: uppercase
+                font-size: 28px
+
+                &:hover
+                    cursor: pointer
+                    color: #ccc
+
+    nav.filters.none
+        top: 0
+        line-height: 12vh
+
+    nav.filters
+        position: fixed
+        top: 14vh
+        line-height: 50px
+        width: 100%
+        text-align: left
+        color: #fff
+        background-color: #272323
+        z-index: 1
+        transition: .4s
+
+        ul.filterList
+            display: flex
+            list-style-type: none
+            font-size: 12px
+
+            li.fil
+
+                &:hover
+                    background-color: #272323
+                    cursor: auto
+
+            li
+                flex-grow: 1
+                padding-left: 10px
+                transition: .4s
+                position: relative
+
+                &:hover
+                    cursor: pointer
+                    background-color: #272323
+
+                aside.filter.none
+                    left: -100vw
+                    
+                aside.filter
+                    position: absolute
+                    display: flex
+                    flex-direction: column
+                    top: 100%
+                    left: 0
+                    width: 100%
+                    z-index: 1
+                    text-align: center
+                    height: 30px
+                    line-height: 30px
+                    transition: .4s
+
+                    .city
+                        height: 70px
+
+                    .liCity
+                        background-color: #b6acac
+                        color: #000
+                        margin-top: 1px
+                        list-style: none
+
+                    div.option.dark
+                        background-color: #161212
+
+                    div.option
+                        position: relative
+                        padding: 10px
+                        background-color: #4e4848
+                        color: #ffffff
+                        transition: .4s
+
+                        &:hover
+                            background-color: #3a3606
+
+                        i
+                            margin-left: 5px
+                            color: green
+
+                        &::after
+                            display: block
+                            content: ''
+                            position: absolute
+                            left: 0
+                            top: 100%
+                            width: 100%
+                            background-color: #ff1111
+                            transform: translate(0, -50%)
+                            height: 5%
+                            border-radius: 50%
+
+                        &:nth-of-type(2), &:nth-of-type(3)
+                            border-right: 1px dashed #777
+                            
+                        &:hover
+                            cursor: pointer
+
+    section.offers
+        width: 80%
+        margin: 50px auto
+        color: white
+
+        article.offer
+            margin-bottom: 50px
+
+            .img
+                height: 200px
+                // border: 1px solid #bbb
+                position: relative
+
+                img
+                    height: 100%
+
+                h1
+                    position: absolute
+                    top: 50%
+                    right: 20%
+                    transform: translate(0, -50%)
+
+            div.info
+                padding-top: 5px
+                padding-bottom: 5px
+                position: relative
+
+                p
+                    font-size: 14px
+                    color: #fff
+                    padding-left: 10px
+                    width: 80%
+
+                p.unv
+                    display: none
+                
+                i
+                    position: absolute
+                    right: 5%
+                    bottom: 5%
+                    transform: rotate(0)
+                    font-size: 28px
+                    color: #aaa
+                    cursor: pointer
+                    transition: .3s
+
+                    &:hover
+                        color: #444
+
+                i.true
+                    transform: rotate(180deg)
+
+                    &:hover
+                        color: #444
+
+@media (min-width: 720px)
+    main
+
+        nav.filters
+            line-height: 50px
+
+            ul.filterList
+                font-size: 24px
+
+                li
+                    padding-left: 10px
+
+                    aside.filter
+                        top: 100%
+                        left: 0
+
+                        div.option
+                            padding: 10px
+                            font-size: 24px   
+        
+        section.offers
+            width: 70%
+
+            article.offer
+                margin-bottom: 50px
+
+                video
+                    height: 400px
+
+                div.info
+                    padding-top: 5px
+                    padding-bottom: 5px
+
+                    p
+                        font-size: 18px
+                        padding-left: 10px
+                    
+                    i
+                        right: 5%
+                        top: 50%
+                        font-size: 28px
+                    
+@media (min-width: 720px) and (orientation: landscape)
+    main
+
+        nav.filters
+            top: 15vh
+            line-height: 50px
+
+            ul.filterList
+                font-size: 24px
+
+                li
+                    padding-left: 10px
+                        
+                    aside.filter
+                        top: 100%
+                        left: 0
+
+                        div.option
+                            padding: 10px
+                            font-size: 24px
+
+        section.offers
+            width: 60%
+
+            article.offer
+                margin-bottom: 50px
+
+                video
+                    height: 200px
+
+                div.info
+                    padding-top: 5px
+                    padding-bottom: 5px
+
+                    p
+                        font-size: 18px
+                        padding-left: 10px
+                    
+                    i
+                        right: 5%
+                        top: 50%
+                        font-size: 28px
+
+@media (min-width: 1024px)
+    main
+
+        nav.filters
+            line-height: 80px
+
+            ul.filterList
+                font-size: 28px
+
+                li
+                    padding-left: 10px
+                        
+                    aside.filter
+                        top: 100%
+                        left: 0
+
+                        div.option
+                            padding: 10px
+                            font-size: 24px
+
+        section.offers
+            width: 70%
+
+            article.offer
+                margin-bottom: 50px
+                margin-top: 50px
+
+                video
+                    height: 500px
+
+                div.info
+                    padding-top: 5px
+                    padding-bottom: 5px
+
+                    p
+                        font-size: 28px
+                        padding-left: 10px
+                    
+                    i
+                        right: 5%
+                        top: 50%
+                        font-size: 28px
+
+@media (min-width: 1024px) and (orientation: landscape)
+    main
+
+        nav.filters
+            line-height: 50px
+            top: 16vh
+
+            ul.filterList
+                font-size: 24px
+
+                li
+                    padding-left: 10px
+                        
+                    aside.filter
+                        top: 100%
+                        left: 0
+
+                        div.option
+                            padding: 10px
+                            font-size: 24px
+
+        section.offers
+            width: 50%
+
+            article.offer
+                margin-bottom: 50px
+                margin-top: 50px
+
+                video
+                    height: 360px
+
+                div.info
+                    padding-top: 5px
+                    padding-bottom: 5px
+
+                    p
+                        font-size: 24px
+                        padding-left: 10px
+                    
+                    i
+                        right: 5%
+                        top: 50%
+                        font-size: 28px
+
+@media (min-width: 1400px)
+    main
+        background-image: url('/assets/musician.jpg')
+        background-attachment: fixed
+        background-size: cover
+
+        nav.filters
+            background-color: #410707
+            line-height: 50px
+
+            ul.filterList
+                font-size: 20px
+
+                li
+                    padding-left: 10px
+                        
+                    aside.filter
+                        top: 100%
+                        left: 0
+
+                        div.option
+                            padding: 10px
+                            font-size: 24px
+
+        section.offers
+            width: 40%
+
+            article.offer
+                background-color: #582323e7
+                margin-bottom: 50px
+                margin-top: 10px
+
+                video
+                    height: 500px
+
+                div.info
+                    padding-top: 5px
+                    padding-bottom: 5px
+
+                    p
+                        font-size: 20px
+                        padding-left: 10px
+                    
+                    i
+                        right: 5%
+                        top: 50%
+                        font-size: 28px

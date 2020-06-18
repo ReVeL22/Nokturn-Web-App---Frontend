@@ -1,0 +1,271 @@
+@import '../guest-page/guest-page.component.sass'
+
+main
+    min-height: 100vh
+    top: 0
+    left: 0
+    background-color: #000
+    position: relative
+    background-image: url('/assets/guitara1536x1024.jpg')
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    background-attachment: fixed
+    opacity: 1
+    overflow: hidden
+    
+    .menu
+        display: flex
+        list-style-type: none
+        position: absolute
+        top: 2%
+        left: 25%
+        z-index: 10000
+        height: 12vh
+        width: 50vw
+        justify-content: space-between
+        align-items: center
+        background-color: rgba(0, 0, 0, .7)
+        padding: 0 10px
+
+        li
+            a
+                color: #ffffff
+                text-decoration: none
+                text-transform: uppercase
+                font-size: 28px
+
+                &:hover
+                    cursor: pointer
+                    color: #ccc
+
+    section.details
+        display: flex
+        flex-direction: column
+        width: 90vw
+        margin: 16vh auto
+        background-color: rgba(255, 255, 255, .2)
+
+        .reg
+            display: block
+            margin: 40px auto 20px
+            height: 20vw
+            width: 60vw
+            background-color: #a80b15
+            border: 2px outset #3a3838
+            font-size: 1.5rem
+            color: #fff
+            cursor: pointer
+            line-height: 20vw
+
+            &:hover
+                color: #ccc
+                border: 2px inset #3a3838
+                background-color: #870903
+
+        .edit
+            text-align: center
+            height: 60px
+            position: relative
+            background-color: #01040c
+
+            span
+                font-size: 28px
+                color: #fff
+                line-height: 60px
+                text-transform: uppercase
+
+            i
+                position: absolute
+                top: 50%
+                right: 10px
+                transform: translate(0, -50%)
+                cursor: pointer
+                transition: .3s
+                font-size: 50px
+                color: #fff
+
+                &:hover
+                    color: #0d740d
+
+            i.yellow 
+                color: yellow
+
+        div.detail
+            flex-basis: 70px
+            margin-top: 10px
+
+            i
+                margin-left: 20px
+                cursor: pointer
+                transition: .3s
+
+                &:hover
+                    color: #0d740d
+
+            i.yellow 
+                color: yellow
+
+            .warning-span
+                color: #e61010
+
+            div.prop
+                position: relative
+                background-color: #000000
+                color: #ffffff
+                text-align: center
+                padding: 15px 10%
+                text-transform: uppercase
+                letter-spacing: 1px
+            
+            div.cont
+                margin-top: 10px
+                text-align: center
+                line-height: 40px
+                color: #fff
+                font-size: 18px
+
+            div.cont.inst
+                display: flex
+                flex-direction: row
+                justify-content: center
+                align-items: center
+                flex-wrap: wrap
+
+                div.inst
+                    color: #ffffff
+                    background-color: #111
+                    margin-left: 5px
+                    padding: 0 5px
+                    border-radius: 20%
+
+                div
+                    width: 100%
+            
+            div.cont.info
+                font-size: 16px
+                line-height: 1.6
+                padding: 10px 0 20px
+
+            .form-control
+                line-height: 40px
+                text-align: center
+                font-size: 18px
+                color: #fff
+                background-color: #b4aeae33
+                border: none
+
+            .form-control.width
+                width: 100%
+                margin-top: 10px
+            
+            textarea.form-control.width
+                resize: none
+                line-height: 20px
+
+@media (min-width: 760px)
+    main
+
+        section.details
+            width: 90vw
+            margin: 16vh auto
+
+            div.detail
+                flex-basis: 70px
+                margin-top: 10px
+
+                div.prop
+                    padding: 10px 10%
+                    font-size: 24px
+
+                    i
+                        margin-left: 5px
+                        padding: 5px
+                
+                div.cont
+                    margin-top: 10px
+                    line-height: 40px
+                    font-size: 22px
+
+                div.inst
+                    margin-left: 5px
+                    padding: 0 5px
+                    border-radius: 20%
+            
+                div.cont.info
+                    font-size: 22px
+                    line-height: 1.6
+                    padding: 10px 0 20px
+
+@media (min-width: 760px) and (orientation: landscape)
+
+@media (min-width: 1020px)
+    main
+
+        section.details
+            width: 50vw
+            margin: 16vh auto
+
+            div.detail
+                flex-basis: 70px
+                margin-top: 10px
+
+                div.prop
+                    padding: 10px 10%
+                    font-size: 24px
+
+                    i
+                        margin-left: 5px
+                        padding: 5px
+                
+                div.cont
+                    margin-top: 10px
+                    line-height: 40px
+                    font-size: 24px
+
+                div.inst
+                    margin-left: 5px
+                    padding: 0 5px
+                    border-radius: 20%
+            
+                div.cont.info
+                    font-size: 22px
+                    line-height: 1.6
+                    padding: 10px 0 20px
+
+@media (min-width: 1020px) and (orientation: landscape)
+    
+@media (min-width: 1240px)
+    main
+
+        section.details
+            width: 40vw
+            margin: 16vh auto
+            background-color: rgba(255, 255, 255, .1)
+
+            div.detail
+                flex-basis: 70px
+                margin-top: 10px
+
+                div.prop
+                    padding: 10px 10%
+                    font-size: 18px
+
+                    i
+                        margin-left: 5px
+                        padding: 5px
+                
+                div.cont
+                    margin-top: 10px
+                    line-height: 40px
+                    font-size: 16px
+
+                div.inst
+                    margin-left: 5px
+                    padding: 0 5px
+                    border-radius: 20%
+            
+                div.cont.info
+                    font-size: 16px
+                    line-height: 1.6
+                    padding: 5px 20px

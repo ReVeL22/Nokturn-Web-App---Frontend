@@ -1,0 +1,33 @@
+.pole
+    display: flex
+    line-height: 30px
+    font-size: 12px
+    div
+        flex-basis: 40%
+        padding-left: 20px
+    textarea
+        flex-basis: 50%
+        height: 60px
+        display: block
+        resize: none
+        background-color: #585252
+        color: #fff
+        &::placeholder
+            color: #fff
+    .i
+        display: block
+        flex-basis: 10%
+        position: relative
+        background-color: transparent
+        border: none
+
+        i
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            font-size: 30px
+            cursor: pointer
+
+        .green 
+            color: green

@@ -1,0 +1,21 @@
+<main>
+  <app-aside-menu-mobile></app-aside-menu-mobile>
+  <section class="content">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="login">Login</label>
+        <input type="text" id="login" formControlName="login" class="form-control">
+        <span class="warning-span" *ngIf="!loginForm.get('login').valid && loginForm.get('login').touched">
+          Proszę podać poprawny login!<em>(Conajmniej 3 znaki)</em>
+      </span>
+
+        <label for="password">Hasło</label>
+        <input type="password" id="password" formControlName="password" class="form-control">
+        <span class="warning-span" *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">
+          Proszę podać poprawne hasło!<em>(Conajmniej 3 znaki)</em>
+      </span>
+      </div>
+      <button class="reg" type="submit">Potwierdź</button>
+    </form>
+  </section>
+</main>

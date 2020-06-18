@@ -1,0 +1,24 @@
+<main>
+  <ul class="menu">
+    <li><a *ngIf="userLogged" [routerLink]="['/profile']">Mój Profil</a></li>
+    <li><a *ngIf="userLogged" [routerLink]="['/offers']">Ogłoszenia</a></li>
+    <li><a *ngIf="userLogged" [routerLink]="['/schedule']">Harmonogram</a></li>
+    <li><a *ngIf="userLogged" [routerLink]="['/myband']">Mój zespół</a></li>
+  </ul>
+  <app-aside-menu-mobile></app-aside-menu-mobile>
+  <h1>Moje imprezy <i (click)="addMode()" class="fas fa-plus"></i></h1>
+  <article *ngIf="edition">
+    <h2>
+      <input (keyup)="city = $event.target.value" class="city" type="text" placeholder="Miejscowość">
+    </h2>
+    <h3>
+      <input (change)="date = $event.target.value" class="date" type="date">
+    </h3>
+    <i *ngIf="city && date" (click)="addNewEvent(city, date)" class="fas fa-check-circle"></i>
+  </article>
+  <article *ngFor="let tour of tours">
+    <h2>{{tour.city}}</h2>
+    <h3>{{tour.date | date}}</h3>
+    <i (click)="deleteEvent(tour._id)" class="far fa-times-circle"></i>
+  </article>
+</main>

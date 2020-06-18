@@ -1,0 +1,27 @@
+<main>
+  <app-aside-menu-mobile></app-aside-menu-mobile>
+  <h1>Panel Administratora</h1>
+  <table>
+    <tr>
+      <th style="width: 10%;" rowspan="3">1</th>
+      <th>Użytkownik</th>
+      <th>Akcja</th>
+    </tr>
+    <tr>
+      <td style="width: 50%;" rowspan="2">
+        <select (change)="choosedUserEmail = $event; csl($event)" name="user" id="user">
+          <option *ngFor="let user of allUsers" value="{{user.email}}">{{user.email}}</option>
+        </select>
+      </td>
+      <td (click)="edit = 'delete'" class="btn">Usuń użytkownika</td>
+    </tr>
+    <tr>
+      <td (click)="edit = 'change'" class="btn">{{choosedUserEmail}}Zmień hasło użytkownika</td>
+    </tr>
+  </table>
+  <ng-container *ngIf="edit == 'change'">
+    <h2>Wpisz nowe hasło</h2>
+    <input type="text" name="password">
+  </ng-container>
+  <button *ngIf="edit" class="send">Potwierdź</button>
+</main>

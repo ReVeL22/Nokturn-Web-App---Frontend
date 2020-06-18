@@ -1,0 +1,47 @@
+<main class="main">
+  <app-aside-menu-mobile></app-aside-menu-mobile>
+  <section class="content">
+    <button class="logbtn" [routerLink]="['/login']">Logowanie</button>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Imię</label>
+        <input type="text" id="name" maxlength=20 formControlName="name" class="form-control">
+        <span class="warning-span" *ngIf="!signupForm.get('name').valid && signupForm.get('name').touched">
+            Proszę podać poprawne imię!<em>(Conajmniej 3 znaki)</em>
+        </span>
+
+        <label for="lastName">Nazwisko</label>
+        <input type="text" id="lastName" maxlength=20 formControlName="lastName" class="form-control">
+        <span class="warning-span" *ngIf="!signupForm.get('lastName').valid && signupForm.get('lastName').touched">
+            Proszę podać poprawne nazwisko!<em>(Conajmniej 3 znaki)</em>
+        </span>
+
+        <label for="login">Login</label>
+        <input type="text" id="login" maxlength=20 formControlName="login" class="form-control">
+        <span class="warning-span" *ngIf="!signupForm.get('login').valid && signupForm.get('login').touched">
+            Proszę podać poprawny login!<em>(Conajmniej 3 znaki)</em>
+        </span>
+
+        <label for="password">Hasło</label>
+        <input type="text" id="password" maxlength=20 formControlName="password" class="form-control">
+        <span class="warning-span" *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched">
+            Proszę podac poprawne hasło!<em>(Conajmniej 3 znaki)</em>
+        </span>
+
+        <label for="email">E-mail</label>
+        <input type="text" id="email" maxlength=20 formControlName="email" class="form-control">
+        <span class="warning-span" *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched">
+            Proszę podać poprawny email!<em>(Conajmniej 3 znaki)</em>
+        </span>
+
+        <label for="city">Miasto</label>
+        <input type="text" id="city" maxlength=20 formControlName="city" class="form-control">
+        <span class="warning-span" *ngIf="!signupForm.get('city').valid && signupForm.get('city').touched">
+            Proszę podać poprawną nazwę miasta!<em>(Conajmniej 3 znaki)</em>
+        </span>
+
+      </div>
+      <button [disabled]="!signupForm.valid" class="reg" type="submit">Potwierdź</button>
+    </form>
+  </section>
+</main>

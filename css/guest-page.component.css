@@ -1,0 +1,30 @@
+section {
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+section div.sec-line {
+  position: absolute;
+  height: 80vh;
+  width: 40px;
+  background-color: red;
+  top: 0;
+  left: 50%;
+}
+
+section div.sec-line:nth-of-type(2) {
+  top: 75%;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+section div.sec-line:nth-of-type(1) {
+  top: 25%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+/*# sourceMappingURL=guest-page.component.css.map */

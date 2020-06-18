@@ -1,0 +1,33 @@
+<main>
+  <app-aside-menu-mobile></app-aside-menu-mobile>
+  <section class="sec-first">
+    <button (click)="shakec()" class="letsGo">Gotowy?</button>
+    <button (click)="scroll()" [ngClass]="{'shakeClass' : shake}" class="letsGoSub s1">INFO</button>
+    <button [routerLink]="['/register']" [ngClass]="{'shakeClass' : shake}" class="letsGoSub s2">REJESTRACJA!</button>
+  </section>
+  <section class="sec-second">
+    <div class="steps">
+      <div class="step">
+        <h1>Krok 1...</h1>
+        <p>Już prawie za Tobą gdyż odwiedziłeś naszą stronę! Teraz zarejestruj się!</p>
+      </div>
+      <div class="step">
+        <h1>Krok 2...</h1>
+        <p>Po rejestracji nie każ czekać Twojej przyszłej karierze ani chwili dłużej i wypełnij niezbędne informacje w
+          Twoim profilu!</p>
+      </div>
+      <div class="step">
+        <h1>Krok 3...</h1>
+        <p>To już prawie wszystko, teraz możesz znaleźć wymarzonych członków zespołu, lub od razu znaleźć istniejący
+          zespół!</p>
+      </div>
+      <div class="step">
+        <h1>Krok 4...</h1>
+        <p>Gratulacje! Udało Ci się, a najlepsze dopiero przed Tobą. Pokaż światu swój talent wraz ze swoim zespołem!
+        </p>
+      </div>
+    </div>
+
+    <button [routerLink]="['/register']" class="reg-btn">Rejestracja</button>
+  </section>
+</main>
